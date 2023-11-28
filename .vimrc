@@ -114,4 +114,6 @@ nnoremap <silent> <Leader><down> 5<C-w>-
 nnoremap <silent> <Esc> :noh<Return>
 nnoremap <silent> <Leader>z :set spell<Return>
 nnoremap <silent> <Leader>Z :set nospell<Return>
+nnoremap <silent> <Leader>w :wa<Return>
+nnoremap <silent> <Leader>q :wq<Return>
 
