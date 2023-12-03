@@ -33,6 +33,12 @@ __setup_os () {
   touch ~/.hushlogin
   git config --global user.name IntegerVector
   git config --global user.email andrii.ruban@outlook.com
+  git config --global alias.c checkout
+  git config --global alias.b branch
+  git config --global alias.c commit
+  git config --global alias.s status
+  git config --global alias.a add
+  git config --global alias.last 'log -1 HEAD'
 
   ssh-keygen -t ed25519 -C "andrii.ruban@outlook.com"
   eval "$(ssh-agent -s)"
