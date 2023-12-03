@@ -116,4 +116,7 @@ nnoremap <silent> <Leader>z :set spell<Return>
 nnoremap <silent> <Leader>Z :set nospell<Return>
 nnoremap <silent> <Leader>w :wa<Return>
 nnoremap <silent> <Leader>q :wq<Return>
+nnoremap <silent> <Leader>[ gT
+nnoremap <silent> <Leader>] gt
+inoremap <silent> <Tab> <C-n>
 
