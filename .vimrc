@@ -120,5 +120,4 @@ nnoremap <silent> <Leader>[ gT
 nnoremap <silent> <Leader>] gt
 nnoremap <silent> <Leader>. :tabm +1<Return>
 nnoremap <silent> <Leader>, :tabm -1<Return>
-inoremap <silent> <Tab> <C-n>
 
