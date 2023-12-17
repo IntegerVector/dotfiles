@@ -19,16 +19,6 @@ __install () {
   esac
 }
 
-__setup_nvim () {
-  git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-  echo "packer installed"
-}
-
-__clear_nvim () {
-  rm -rf ~/.local/share/nvim
-  echo ".local/share/nvim deleted"
-}
-
 __setup_os () {
   touch ~/.hushlogin
   git config --global user.name IntegerVector
@@ -58,15 +48,10 @@ __setup_os () {
 
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       eval "$(/opt/homebrew/bin/brew shellenv)"
-
-      brew install nvim
       ;;
   esac
 
   __install vim
-  __install gcc
-  __install fd
-  __install ripgrep
   __install kitty
 
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash

@@ -8,17 +8,6 @@ run () {
       __get_ip
     fi
   fi
-  if [ $1 = "nvim" ]
-  then
-    if [ $2 = "setup" ]
-    then
-      __setup_nvim
-    fi
-    if [ $2 = "clear" ]
-    then
-      __clear_nvim
-    fi
-  fi
   if [ $1 = "os" ]
   then
     if [ $2 = "setup" ]
