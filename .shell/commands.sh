@@ -13,7 +13,6 @@ run () {
     if [ $2 = "setup" ]
     then
       __setup_os
-      __setup_nvim
     fi
     if [ $2 = "clear" ]
     then
