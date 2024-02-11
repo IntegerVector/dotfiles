@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/zsh
 
-source ~/.shell/theme.sh
+source ~/.shell/prompt.sh
 source ~/.shell/resources.sh
 source ~/.shell/aliases.sh
 source ~/.shell/utils.sh

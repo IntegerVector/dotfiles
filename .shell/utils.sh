@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 __get_ip () {
   curl ifconfig.me
@@ -39,7 +39,6 @@ __setup_os () {
       sudo apt install -y flatpak gnome-software-plugin-flatpak
       ;;
     "Darwin")
-      touch ~/.ssh/config
       echo "Host github.com" >> ~/.ssh/config
       echo "  AddKeysToAgent yes" >> ~/.ssh/config
       echo "  IdentityFile ~/.ssh/id_ed25519" >> ~/.ssh/config
@@ -53,16 +52,10 @@ __setup_os () {
   __install vim
   __install kitty
 
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
-
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
   nvm ls-remote
 }
 
-__clear_os () {
+__clean_os () {
   case $(__get_os_name) in
     "Linux")
       sudo apt autoremove
@@ -92,18 +85,18 @@ __show_random_header_img () {
 }
 
 __show_header_image_0 () {
-  echo "$_IMG_PENGUIN"
+  echo "$_IMG_UWU_0"
 }
 
 __show_header_image_1 () {
-  echo "$_IMG_PIKACHO"
+  echo "$_IMG_UWU_1"
 }
 
 __show_header_image_2 () {
-  echo "$_IMG_SAILOR_MOON_LUNA"
+  echo "$_IMG_UWU_2"
 }
 
 __show_header_image_3 () {
-  echo "$_IMG_EYES"
+  echo "$_IMG_UWU_3"
 }
 

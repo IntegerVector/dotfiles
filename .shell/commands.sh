@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 run () {
   if [ $1 = "get" ]
@@ -7,6 +7,17 @@ run () {
     then
       __get_ip
     fi
+    if [ $2 = "os" ]
+    then
+      __get_os_name
+    fi
+  fi
+  if [ $1 = "install" ] || [ $1 = "i" ]
+  then
+    if [ -n $2 ]
+    then
+      __install $2
+    fi
   fi
   if [ $1 = "os" ]
   then
@@ -14,9 +25,9 @@ run () {
     then
       __setup_os
     fi
-    if [ $2 = "clear" ]
+    if [ $2 = "clean" ]
     then
-      __clear_os
+      __clean_os
     fi
     if [ $2 = "update" ]
     then
