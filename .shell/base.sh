@@ -16,6 +16,9 @@ case $(__get_os_name) in
     ;;
 esac
 
+# additional configs
+source ~/.shell/custom.sh
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

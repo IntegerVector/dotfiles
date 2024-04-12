@@ -42,6 +42,8 @@ set nowrap
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set swapfile
+set dir=~/.tmp
 
 if has('macunix')
   set clipboard+=unnamed
