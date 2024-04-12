@@ -56,6 +56,7 @@ __setup_os () {
 }
 
 __clean_os () {
+  rm -rf ~/.tmp
   case $(__get_os_name) in
     "Linux")
       sudo apt autoremove
