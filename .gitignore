@@ -2,4 +2,5 @@
 .DS_Store/*
 *.un~
 .shell/custom.sh
+**/lazy-lock.json
 
