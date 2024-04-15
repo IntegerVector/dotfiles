@@ -102,6 +102,7 @@ command CopyFullPath :call CopyFullPath()
 nnoremap <silent> + <C-a>
 nnoremap <silent> - <C-x>
 nnoremap <silent> <Leader>p "0p
+vnoremap <silent> <Leader>p "0p
 nnoremap <silent> <C-a> gg<S-v>G
 nnoremap <silent> st :tabedit<Return>
 nnoremap <silent> sh :split<Return>
