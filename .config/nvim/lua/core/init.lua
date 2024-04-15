@@ -1,5 +1,8 @@
+local cfg = require 'core.cfg'
 local map = require 'core.map'
 local cmd = require 'core.cmd'
+
+cfg.setup()
 
 for _, m in ipairs(map) do
   vim.api.nvim_set_keymap(m.m, m.k, m.c, m.o)
