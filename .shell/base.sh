@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+source ~/.shell/block.sh
 source ~/.shell/prompt.sh
 source ~/.shell/resources.sh
 source ~/.shell/aliases.sh
