@@ -44,7 +44,6 @@ M.setup = function()
   vim.opt.wildoptions = 'pum'
   vim.opt.wildmode = 'longest'
 
-  vim.opt.dir = '$HOME/.tmp/'
   vim.opt.path:append { '**' }
   vim.opt.formatoptions:append { 'r' }
   vim.opt.clipboard:append  { 'unnamedplus' }
