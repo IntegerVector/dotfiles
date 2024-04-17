@@ -82,22 +82,6 @@ __update_os () {
 }
 
 __show_random_header_img () {
-  __show_header_image_$(($RANDOM/10000))
-}
-
-__show_header_image_0 () {
-  echo "$_IMG_UWU_0"
-}
-
-__show_header_image_1 () {
-  echo "$_IMG_UWU_1"
-}
-
-__show_header_image_2 () {
-  echo "$_IMG_UWU_2"
-}
-
-__show_header_image_3 () {
-  echo "$_IMG_UWU_3"
+  echo "$_HEADER_IMG_UWU"
 }
 
