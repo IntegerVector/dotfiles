@@ -48,15 +48,16 @@ return {
 
     vim.diagnostic.config(vim.deepcopy(opts.diagnostics))
 
-    local opts = { noremap = true, silent = true }
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<Leader>c', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    local o = { noremap = true, silent = true }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, o)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, o)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, o)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, o)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, o)
+    vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, o)
+    vim.keymap.set({ 'n', 'v' }, '<Leader>c', vim.lsp.buf.code_action, o)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, o)
+    vim.keymap.set('n', '<Leader>v', vim.diagnostic.open_float, o)
     -- vim.keymap.set('n', '<Leader>F', function()
     --  vim.lsp.buf.format { async = true }
     -- end, opts)
