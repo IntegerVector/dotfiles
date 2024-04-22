@@ -1,16 +1,16 @@
 return {
-  'stevearc/conform.nvim',
-  dependencies = { 'mason.nvim' },
+  "stevearc/conform.nvim",
+  dependencies = { "mason.nvim" },
   lazy = true,
-  cmd = 'ConformInfo',
+  cmd = "ConformInfo",
   keys = {
     {
-      '<Leader>x',
+      "<Leader>x",
       function()
-        require('conform').format({ formatters = { 'injected' }, timeout_ms = 3000 })
+        require("conform").format({ formatters = { "injected" }, timeout_ms = 3000 })
       end,
-      mode = { 'n', 'v' },
-      desc = 'Format Injected Langs',
+      mode = { "n", "v" },
+      desc = "Format Injected Langs",
     },
   },
   opts = function()
@@ -22,9 +22,9 @@ return {
         lsp_fallback = true,
       },
       formatters_by_ft = {
-        lua = { 'stylua' },
-        fish = { 'fish_indent' },
-        sh = { 'shfmt' },
+        lua = { "stylua" },
+        fish = { "fish_indent" },
+        sh = { "shfmt" },
       },
       formatters = {
         injected = { options = { ignore_errors = true } },
