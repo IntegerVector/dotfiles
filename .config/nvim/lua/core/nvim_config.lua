@@ -30,7 +30,6 @@ M.setup = function()
   vim.opt.splitbelow = true
   vim.opt.smartindent = true
   vim.opt.breakindent = true
-  vim.opt.termguicolors = true
 
   vim.opt.wrap = false
   vim.opt.backup = false
