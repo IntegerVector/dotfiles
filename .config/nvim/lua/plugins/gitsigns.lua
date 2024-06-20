@@ -17,8 +17,8 @@ return {
         vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
       end
 
-      map("n", "]h", gs.next_hunk, "Next Hunk")
-      map("n", "[h", gs.prev_hunk, "Prev Hunk")
+      map("n", "<leader>g]", gs.next_hunk, "Next Hunk")
+      map("n", "<leader>g[", gs.prev_hunk, "Prev Hunk")
       map({ "n", "v" }, "<leader>gs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
       map({ "n", "v" }, "<leader>gr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
       map("n", "<leader>gu", gs.undo_stage_hunk, "Undo Stage Hunk")
