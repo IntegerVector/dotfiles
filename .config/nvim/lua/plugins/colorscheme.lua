@@ -34,7 +34,7 @@ return {
     require("catppuccin").setup {
       color_overrides = {
         latte = {
-          mantle = "#d5dce8",
+          mantle = "#EFF1F6",
         },
       }
     }
