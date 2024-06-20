@@ -23,19 +23,17 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = { "branch" },
-        lualine_c = { "filename" },
+        lualine_c = {
+          { "filename", padding = { left = 2, right = 1 } }
+        },
         lualine_x = {
-          { "encoding", separator = " ", padding = { left = 1, right = 1 } },
           { "fileformat", padding = { left = 1, right = 2 } },
         },
         lualine_y = {
-          { "progress", separator = " ", padding = { left = 1, right = 0 } },
-          { "location", padding = { left = 0, right = 1 } },
+          { "encoding", separator = " ", padding = { left = 1, right = 1 } },
         },
         lualine_z = {
-          function()
-            return os.date("%R")
-          end
+          { "location", padding = { left = 0, right = 1 } },
         },
       },
       extensions = { "neo-tree", "lazy" },
