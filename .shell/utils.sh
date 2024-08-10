@@ -28,6 +28,7 @@ __setup_os () {
   git config --global alias.s status
   git config --global alias.a add
   git config --global alias.last 'log -1 HEAD'
+  git config --global alias.amend 'commit --amend --no-edit'
 
   ssh-keygen -t ed25519 -C "andrii.ruban@outlook.com"
   eval "$(ssh-agent -s)"
