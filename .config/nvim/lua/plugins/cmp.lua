@@ -16,6 +16,7 @@ return {
       auto_brackets = {},
       completion = {
         completeopt = "menu,menuone,noinsert",
+        autocomplete = false,
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-u>"] = cmp.mapping.scroll_docs(-4),
@@ -27,10 +28,6 @@ return {
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         }),
-        ["<C-CR>"] = function(fallback)
-          cmp.abort()
-          fallback()
-        end,
       }),
       sources = cmp.config.sources({
         { name = "nvim_lsp" },
