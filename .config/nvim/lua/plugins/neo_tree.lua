@@ -32,7 +32,10 @@ return {
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
     filesystem = {
       bind_to_cwd = false,
-      follow_current_file = { enabled = true },
+      follow_current_file = {
+        enabled = true,
+        leave_dirs_open = true,
+      },
       use_libuv_file_watcher = true,
     },
     window = {
@@ -52,6 +55,13 @@ return {
           end,
           desc = "Open with System Application",
         },
+        ["gA"]  = "git_add_all",
+        ["gu"] = "git_unstage_file",
+        ["ga"] = "git_add_file",
+        ["gr"] = "git_revert_file",
+        ["gc"] = "git_commit",
+        ["gp"] = "git_push",
+        ["gg"] = "git_commit_and_push",
       },
     },
     default_component_configs = {
@@ -60,6 +70,23 @@ return {
         expander_collapsed = "",
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
+      },
+      type = {
+        enabled = true,
+        required_width = 12,
+      },
+      git_status = {
+        symbols = {
+          added     = "✚",
+          modified  = "",
+          deleted   = "✖",
+          renamed   = "󰁕",
+          untracked = "",
+          ignored   = "",
+          unstaged  = "󰄱",
+          staged    = "",
+          conflict  = "",
+        },
       },
     },
   },
