@@ -39,6 +39,7 @@ return {
       use_libuv_file_watcher = true,
     },
     window = {
+      width = 50,
       mappings = {
         ["<space>"] = "none",
         ["Y"] = {
@@ -70,10 +71,6 @@ return {
         expander_collapsed = "",
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
-      },
-      type = {
-        enabled = true,
-        required_width = 12,
       },
       git_status = {
         symbols = {
