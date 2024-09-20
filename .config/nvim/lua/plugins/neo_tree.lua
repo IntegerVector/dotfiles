@@ -41,6 +41,8 @@ return {
     window = {
       width = 50,
       mappings = {
+        ["s"] = "none",
+        ["w"] = "none",
         ["<space>"] = "none",
         ["Y"] = {
           function(state)
@@ -62,7 +64,7 @@ return {
         ["gr"] = "git_revert_file",
         ["gc"] = "git_commit",
         ["gp"] = "git_push",
-        ["gg"] = "git_commit_and_push",
+        ["sv"] = "open_vsplit",
       },
     },
     default_component_configs = {
