@@ -1,5 +1,5 @@
 local file = require "core.file"
-local text_editor = require "core.text_editor"
+local text_editor = require "core.editor"
 
 local M = {}
 
