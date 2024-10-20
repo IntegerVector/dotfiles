@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 __get_ip () {
   curl ifconfig.me
@@ -6,17 +6,6 @@ __get_ip () {
 
 __get_os_name () {
   uname -s
-}
-
-__install () {
-  case $(__get_os_name) in
-    "Linux")
-      sudo apt install -y $1
-      ;;
-    "Darwin")
-      brew install $1
-      ;;
-  esac
 }
 
 __setup_os () {
@@ -37,8 +26,6 @@ __setup_os () {
   case $(__get_os_name) in
     "Linux")
       ssh-add ~/.ssh/id_ed25519
-
-      sudo apt install -y flatpak gnome-software-plugin-flatpak
       ;;
     "Darwin")
       echo "Host github.com" >> ~/.ssh/config
@@ -50,40 +37,5 @@ __setup_os () {
       eval "$(/opt/homebrew/bin/brew shellenv)"
       ;;
   esac
-
-  __install vim
-  __install kitty
-
-  nvm ls-remote
-}
-
-__clean_os () {
-  rm -rf ~/.tmp
-  case $(__get_os_name) in
-    "Linux")
-      sudo apt autoremove
-      sudo apt clean
-      flatpak uninstall --unused
-      ;;
-    "Darwin")
-      brew cleanup --prune=all
-      ;;
-  esac
-}
-
-__update_os () {
-  case $(__get_os_name) in
-    "Linux")
-      sudo apt update && sudo apt upgrade
-      flatpak update
-      ;;
-    "Darwin")
-      brew update && brew upgrade
-      ;;
-  esac
-}
-
-__show_random_header_img () {
-  echo "$_HEADER_IMG_UWU"
 }
 

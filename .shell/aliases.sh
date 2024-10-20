@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 alias l="ls"
 alias ll="ls -al"

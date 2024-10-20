@@ -7,5 +7,5 @@ bindkey -v
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit && compinit
 
-source ~/.shell/base.sh
+source ~/.shell/main.sh
 
