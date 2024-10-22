@@ -22,5 +22,5 @@ export NVM_DIR="$HOME/.nvm"
 
 echo ""
 echo ""
-~/.shell/ttai " $USER "
+__ttai " $USER "
 

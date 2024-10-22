@@ -16,5 +16,9 @@ run () {
   then
     __setup_os
   fi
+  if [ $1 = "ttai" ]
+  then
+    __ttai $2
+  fi
 }
 

@@ -8,6 +8,10 @@ __get_os_name () {
   uname -s
 }
 
+__ttai () {
+  ~/.shell/ttai $1
+}
+
 __setup_os () {
   touch ~/.hushlogin
   git config --global user.name IntegerVector
