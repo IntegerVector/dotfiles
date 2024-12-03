@@ -7,7 +7,7 @@ nvim_config.setup()
 
 -- Mappings:
 for _, m in ipairs(mappings) do
-  vim.api.nvim_set_keymap(m.name, m.key, m.command, m.options)
+  vim.api.nvim_set_keymap(m.mode, m.key, m.command, m.options)
 end
 
 -- Commands:
