@@ -23,6 +23,8 @@ __setup_os () {
   git config --global alias.last 'log -1 HEAD'
   git config --global alias.amend 'commit --amend --no-edit'
   git config --global init.defaultBranch main
+  git config --global push.autoSetupRemote true
+  git config --global push.default simple
 
   ssh-keygen -t ed25519 -C "andrii.ruban@outlook.com"
   eval "$(ssh-agent -s)"
