@@ -9,7 +9,7 @@ source ~/.shell/aliases.sh
 source ~/.shell/dev-tools.sh
 
 # os specific
-case $(run "get_os_name") in
+case $(uname -s) in
   "Linux")
     source ~/.shell/linux.sh
     ;;

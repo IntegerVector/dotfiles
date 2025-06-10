@@ -1,6 +1,8 @@
-local fancy = require('lua-utils.fancy-print')
+local fancy = require 'lua-utils.fancy-print'
+local sh = require 'lua-utils.sh'
+
 local os_name = tostring(
-  require('lua-utils.os').get_os_name()
+  sh('uname')('-s')
 )
 
 if os_name ~= 'Linux' and os_name ~= 'Darwin' then
