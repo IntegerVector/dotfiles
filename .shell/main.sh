@@ -1,12 +1,15 @@
-#!/bin/bash
+#!/bin/zsh
 
+source ~/.shell/lua-utils.sh
+source ~/.shell/setup.sh
+source ~/.shell/zsh-base-cfg.sh
 source ~/.shell/prompt.sh
+source ~/.shell/decoration.sh
 source ~/.shell/aliases.sh
-source ~/.shell/utils.sh
-source ~/.shell/commands.sh
+source ~/.shell/dev-tools.sh
 
 # os specific
-case $(__get_os_name) in
+case $(run "get_os_name") in
   "Linux")
     source ~/.shell/linux.sh
     ;;
@@ -14,13 +17,4 @@ case $(__get_os_name) in
     source ~/.shell/darwin.sh
     ;;
 esac
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-echo ""
-echo ""
-__ttai " $USER "
 

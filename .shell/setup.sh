@@ -1,18 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
 
-__get_ip () {
-  curl ifconfig.me
-}
-
-__get_os_name () {
-  uname -s
-}
-
-__ttai () {
-  ~/.shell/ttai $1
-}
-
-__setup_os () {
+setup () {
   touch ~/.hushlogin
   git config --global user.name IntegerVector
   git config --global user.email andrii.ruban@outlook.com
@@ -29,7 +17,7 @@ __setup_os () {
   ssh-keygen -t ed25519 -C "andrii.ruban@outlook.com"
   eval "$(ssh-agent -s)"
 
-  case $(__get_os_name) in
+  case $(run "get_os_name") in
     "Linux")
       ssh-add ~/.ssh/id_ed25519
       ;;
