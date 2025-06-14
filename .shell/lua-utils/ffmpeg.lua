@@ -3,7 +3,7 @@ local prompt = require ('lua-utils.user-interaction').prompt
 
 local M = {}
 
-M.webm_to_mp4 = function(in_path, out_path)
+M.video_to_mp4 = function(in_path, out_path)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -15,7 +15,7 @@ M.webm_to_mp4 = function(in_path, out_path)
   return sh('ffmpeg')('-i ' .. in_path .. ' -c:v libx264 -c:a aac ' .. out_path)
 end
 
-M['config:webm_to_mp4'] = function()
+M['config:video_to_mp4'] = function()
   return {
     visible = true,
     help = function()
@@ -27,7 +27,7 @@ M['config:webm_to_mp4'] = function()
   }
 end
 
-M.remove_sound_from_video = function(in_path, out_path)
+M.video_remove_sound = function(in_path, out_path)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -39,7 +39,7 @@ M.remove_sound_from_video = function(in_path, out_path)
   return sh('ffmpeg')('-i ' .. in_path .. ' -c copy -an ' .. out_path)
 end
 
-M['config:remove_sound_from_video'] = function()
+M['config:video_remove_sound'] = function()
   return {
     visible = true,
     help = function()
@@ -51,7 +51,7 @@ M['config:remove_sound_from_video'] = function()
   }
 end
 
-M.mp4_to_gif = function(in_path, out_path, fps, skip_sec)
+M.video_to_gif = function(in_path, out_path, fps, skip_sec)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -71,7 +71,7 @@ M.mp4_to_gif = function(in_path, out_path, fps, skip_sec)
   return sh('ffmpeg')('-i ' .. in_path .. ' -ss ' .. skip_sec .. ' -vf "fps=' .. fps .. '" -loop 0 ' .. out_path)
 end
 
-M['config:mp4_to_gif'] = function()
+M['config:video_to_gif'] = function()
   return {
     visible = true,
     help = function()
