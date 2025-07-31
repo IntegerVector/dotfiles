@@ -16,6 +16,8 @@ return {
 
     return {
       options = {
+        component_separators = nil,
+        section_separators = { left = '', right = ''},
         theme = "auto",
         globalstatus = true,
         disabled_filetypes = { statusline = { "dashboard", "alpha", "starter" } },
@@ -30,7 +32,7 @@ return {
           { "fileformat", padding = { left = 1, right = 2 } },
         },
         lualine_y = {
-          { "encoding", separator = " ", padding = { left = 1, right = 1 } },
+          { "encoding", padding = { left = 1, right = 1 } },
         },
         lualine_z = {
           { "location", padding = { left = 0, right = 1 } },
