@@ -15,7 +15,7 @@ M.yt_dlp = function(video_url, file_path)
   print(sh('yt-dlp')('--list-formats ' .. '"' .. video_url .. '"'))
 
   local format = prompt('Choose file format (default: 720): ')
-  format = format or '720'
+  format = format == '' and '720' or format
 
   print(sh('yt-dlp')('-o ' .. file_path .. ' -f "bestvideo[height<=' .. format .. ']+bestaudio" ' .. '"' .. video_url .. '"'))
 end

@@ -3,7 +3,7 @@ local prompt = require ('lua-utils.user-interaction').prompt
 
 local M = {}
 
-M.video_to_mp4 = function(in_path, out_path)
+M.video_to_mp4 = function(in_path, out_path, crf, bitrate, preset)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -12,7 +12,23 @@ M.video_to_mp4 = function(in_path, out_path)
     out_path = prompt('Result file path: ', true)
   end
 
-  return sh('ffmpeg')('-i ' .. in_path .. ' -c:v libx264 -c:a aac ' .. out_path)
+  if crf == nil then
+    crf = prompt('CRF (recomended from 24 to 30; default: 26): ')
+    crf = crf == '' and '26' or crf
+  end
+
+  if bitrate == nil then
+    bitrate = prompt('Bitrate (default: 192k): ')
+    bitrate = bitrate == '' and '192k' or bitrate
+  end
+
+  if preset == nil then
+    preset = prompt('Preset (ultrafast, superfast, veryfast, faster, fast, medium, slow, slower, veryslow; default: fast): ')
+    preset = preset == '' and 'fast' or preset
+  end
+
+  print('ffmpeg' ..  ' -i ' .. in_path .. ' -c:v libx265 -crf ' .. crf .. ' -preset ' .. preset .. ' -vtag hvc1 -c:a aac -b:a ' .. bitrate .. ' ' .. out_path);
+  return sh('ffmpeg')('-i ' .. in_path .. ' -c:v libx265 -crf ' .. crf .. ' -preset ' .. preset .. ' -vtag hvc1 -c:a aac -b:a ' .. bitrate .. ' ' .. out_path)
 end
 
 M['config:video_to_mp4'] = function()
@@ -20,7 +36,7 @@ M['config:video_to_mp4'] = function()
     visible = true,
     help = function()
       return [[ 
-        1) M.webm_to_mp4(optional_in_path, optional_out_path)
+        1) M.webm_to_mp4(optional_in_path, optional_out_path, optional_crf, optional_bitrate, optional_preset)
         returns status string
       ]]
     end
