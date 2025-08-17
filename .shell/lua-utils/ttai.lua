@@ -612,7 +612,7 @@ M['config:ttai'] = function()
     visible = true,
     help = function()
       return [[ 
-        1) M.transform('string_to_transform')
+        1) M.ttai('string_to_transform')
         returns table with 6 strings that represents string image
       ]]
     end,
