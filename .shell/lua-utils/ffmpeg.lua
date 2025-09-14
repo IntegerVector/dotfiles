@@ -99,5 +99,79 @@ M['config:video_to_gif'] = function()
   }
 end
 
+M.video_cut = function(in_path, out_path, start_sec, duration)
+  if in_path == nil then
+    in_path = prompt('File path: ', true)
+  end
+
+  if out_path == nil then
+    out_path = prompt('Result file path: ', true)
+  end
+
+  if start_sec == nil then
+    start_sec = prompt('Start second (default: 00:00:00): ')
+    start_sec = start_sec == '' and '00:00:00' or start_sec
+  end
+
+  if duration == nil then
+    duration = prompt('Duration (default: 00:00:30): ')
+    duration = duration == '' and '00:00:30' or duration
+  end
+
+  return sh('ffmpeg')('-i ' .. in_path ' -ss ' .. start_sec .. ' -t ' .. duration .. ' ' .. out_path)
+end
+
+M['config:video_cut'] = function()
+  return {
+    visible = true,
+    help = function()
+      return [[
+        1) M.video_cut(in_path, out_path, start_sec, duration)
+        returns status string
+      ]]
+    end
+  }
+end
+
+M.video_crop = function(in_path, out_path, w, h, x, y)
+  if in_path == nil then
+    in_path = prompt('File path: ', true)
+  end
+
+  if out_path == nil then
+    out_path = prompt('Result file path: ', true)
+  end
+
+  if w == nil then
+    w = prompt('W: ', true)
+  end
+
+  if h == nil then
+    h = prompt('H: ', true)
+  end
+
+  if x == nil then
+    x = prompt('X: ', true)
+  end
+
+  if y == nil then
+    y = prompt('Y: ', true)
+  end
+
+  return sh('ffmpeg')('-i ' .. in_path .. ' -vf "crop=' .. w .. ':' .. h .. ':' .. x .. ':' .. y .. '" ' .. out_path)
+end
+
+M['config:video_crop'] = function()
+  return {
+    visible = true,
+    help = function()
+      return [[
+        1) M.video_crop(in_path, out_path, w, h, x, y)
+        returns status string
+      ]]
+    end
+  }
+end
+
 return M
 
