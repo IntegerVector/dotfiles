@@ -106,7 +106,7 @@ mt.__index = function(t, cmd)
   return command(cmd)
 end
 
-M.sh = command
+M['sh'] = command
 
 M['config:sh'] = function()
   return {

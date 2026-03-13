@@ -51,7 +51,7 @@ fancy_print = function(key, value, indent_size, indent_value, show_brackets, sho
   end
 end
 
-M.print = function(value, options)
+M['print'] = function(value, options)
   local default_options = {
     indent_value = '  ',
     show_brackets = true,

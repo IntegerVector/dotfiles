@@ -8,7 +8,7 @@ local show_prompt = function(prompt_text)
   return io.read()
 end
 
-M.prompt = function(prompt_text, skip_empty_string)
+M['prompt'] = function(prompt_text, skip_empty_string)
   if skip_empty_string then
     local user_input = ''
     while user_input == '' do

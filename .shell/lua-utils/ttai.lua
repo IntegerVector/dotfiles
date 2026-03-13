@@ -582,7 +582,7 @@ local ttai_characters_map = function(c)
   }
 end
 
-M.ttai = function(text)
+M['ttai'] = function(text)
   local result = {
     '',
     '',

@@ -3,7 +3,7 @@ local prompt = require ('lua-utils.user-interaction').prompt
 
 local M = {}
 
-M.video_to_mp4 = function(in_path, out_path, crf, bitrate, preset)
+M['video-to-mp4'] = function(in_path, out_path, crf, bitrate, preset)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -31,7 +31,7 @@ M.video_to_mp4 = function(in_path, out_path, crf, bitrate, preset)
   return sh('ffmpeg')('-i ' .. in_path .. ' -c:v libx265 -crf ' .. crf .. ' -preset ' .. preset .. ' -vtag hvc1 -c:a aac -b:a ' .. bitrate .. ' ' .. out_path)
 end
 
-M['config:video_to_mp4'] = function()
+M['config:video-to-mp4'] = function()
   return {
     visible = true,
     help = function()
@@ -43,7 +43,7 @@ M['config:video_to_mp4'] = function()
   }
 end
 
-M.video_remove_sound = function(in_path, out_path)
+M['video-remove-sound'] = function(in_path, out_path)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -55,7 +55,7 @@ M.video_remove_sound = function(in_path, out_path)
   return sh('ffmpeg')('-i ' .. in_path .. ' -c copy -an ' .. out_path)
 end
 
-M['config:video_remove_sound'] = function()
+M['config:video-remove-sound'] = function()
   return {
     visible = true,
     help = function()
@@ -67,7 +67,7 @@ M['config:video_remove_sound'] = function()
   }
 end
 
-M.video_to_gif = function(in_path, out_path, fps, skip_sec)
+M['video-to-gif'] = function(in_path, out_path, fps, skip_sec)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -87,7 +87,7 @@ M.video_to_gif = function(in_path, out_path, fps, skip_sec)
   return sh('ffmpeg')('-i ' .. in_path .. ' -ss ' .. skip_sec .. ' -vf "fps=' .. fps .. '" -loop 0 ' .. out_path)
 end
 
-M['config:video_to_gif'] = function()
+M['config:video-to-gif'] = function()
   return {
     visible = true,
     help = function()
@@ -99,7 +99,7 @@ M['config:video_to_gif'] = function()
   }
 end
 
-M.video_cut = function(in_path, out_path, start_sec, duration)
+M['video-cut'] = function(in_path, out_path, start_sec, duration)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -121,7 +121,7 @@ M.video_cut = function(in_path, out_path, start_sec, duration)
   return sh('ffmpeg')('-i ' .. in_path ' -ss ' .. start_sec .. ' -t ' .. duration .. ' ' .. out_path)
 end
 
-M['config:video_cut'] = function()
+M['config:video-cut'] = function()
   return {
     visible = true,
     help = function()
@@ -133,7 +133,7 @@ M['config:video_cut'] = function()
   }
 end
 
-M.video_crop = function(in_path, out_path, w, h, x, y)
+M['video-crop'] = function(in_path, out_path, w, h, x, y)
   if in_path == nil then
     in_path = prompt('File path: ', true)
   end
@@ -161,7 +161,7 @@ M.video_crop = function(in_path, out_path, w, h, x, y)
   return sh('ffmpeg')('-i ' .. in_path .. ' -vf "crop=' .. w .. ':' .. h .. ':' .. x .. ':' .. y .. '" ' .. out_path)
 end
 
-M['config:video_crop'] = function()
+M['config:video-crop'] = function()
   return {
     visible = true,
     help = function()

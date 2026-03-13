@@ -3,7 +3,7 @@ local prompt = require ('lua-utils.user-interaction').prompt
 
 local M = {}
 
-M.yt_dlp = function(video_url, file_path)
+M['yt-dlp'] = function(video_url, file_path)
   if video_url == nil then
     video_url = prompt('Video URL: ', true)
   end
@@ -20,7 +20,7 @@ M.yt_dlp = function(video_url, file_path)
   print(sh('yt-dlp')('-o ' .. file_path .. ' -f "bestvideo[height<=' .. format .. ']+bestaudio" ' .. '"' .. video_url .. '"'))
 end
 
-M['config:yt_dlp'] = function()
+M['config:yt-dlp'] = function()
   return {
     visible = true,
     help = function()

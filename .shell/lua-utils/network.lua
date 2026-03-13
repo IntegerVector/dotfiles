@@ -2,11 +2,11 @@ local sh = require 'lua-utils.sh'
 
 local M = {}
 
-M.get_ip = function()
+M['get-ip'] = function()
   return sh('curl')('ifconfig.me')
 end
 
-M['config:get_ip'] = function()
+M['config:get-ip'] = function()
   return {
     visible = true,
     help = function()
