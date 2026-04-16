@@ -1,8 +1,8 @@
 return {
-  "EdenEast/nightfox.nvim",
+  "sainnhe/sonokai",
+  priority = 1000,
   config = function()
-    require("nightfox").setup()
-    vim.cmd [[ colorscheme dawnfox ]]
+    vim.cmd [[ colorscheme sonokai ]]
   end
 }
 
