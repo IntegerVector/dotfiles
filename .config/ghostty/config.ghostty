@@ -1,1 +1,4 @@
 font-size = 16
+window-save-state = always
+maximize = true
+
