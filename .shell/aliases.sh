@@ -16,4 +16,8 @@ alias ga="git add"
 alias gr="git restore"
 alias gd="git checkout"
 alias gamend="git commit --amend --no-edit"
+alias tc="tmux new -s"
+alias ta="tmux attach -t"
+alias tq="tmux kill-session -t"
+alias td="tmux detach -s"
 
