@@ -20,4 +20,5 @@ alias tc="tmux new -s"
 alias ta="tmux attach -t"
 alias tq="tmux kill-session -t"
 alias td="tmux detach -s"
+alias tl="tmux ls"
 
