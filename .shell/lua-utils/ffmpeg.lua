@@ -3,6 +3,31 @@ local prompt = require ('lua-utils.user-interaction').prompt
 
 local M = {}
 
+M['video-to-mp4-nre'] = function(in_path, out_path)
+  if in_path == nil then
+    in_path = prompt('File path: ', true)
+  end
+
+  if out_path == nil then
+    out_path = prompt('Result file path: ', true)
+  end
+
+  print('ffmpeg' ..  ' -i ' .. in_path .. ' -c:v copy ' .. out_path);
+  return sh('ffmpeg')('-i ' .. in_path .. ' -c:v copy ' .. out_path);
+end
+
+M['config:video-to-mp4-nre'] = function()
+  return {
+    visible = true,
+    help = function()
+      return [[ 
+        1) M.video-to-mp4-nre(optional_in_path, optional_out_path)
+        returns status string
+      ]]
+    end
+  }
+end
+
 M['video-to-mp4'] = function(in_path, out_path, crf, bitrate, preset)
   if in_path == nil then
     in_path = prompt('File path: ', true)
@@ -36,7 +61,7 @@ M['config:video-to-mp4'] = function()
     visible = true,
     help = function()
       return [[ 
-        1) M.webm_to_mp4(optional_in_path, optional_out_path, optional_crf, optional_bitrate, optional_preset)
+        1) M.video-to-mp4(optional_in_path, optional_out_path, optional_crf, optional_bitrate, optional_preset)
         returns status string
       ]]
     end
@@ -60,7 +85,7 @@ M['config:video-remove-sound'] = function()
     visible = true,
     help = function()
       return [[ 
-        1) M.remove_sound(optional_in_path, optional_out_path)
+        1) M.video-remove-sound(optional_in_path, optional_out_path)
         returns status string
       ]]
     end
@@ -92,7 +117,7 @@ M['config:video-to-gif'] = function()
     visible = true,
     help = function()
       return [[ 
-        1) M.mp4_to_gif(optional_in_path, optional_out_path, optional_fps, optional_skip_sec)
+        1) M.video-to-gif(optional_in_path, optional_out_path, optional_fps, optional_skip_sec)
         returns status string
       ]]
     end
@@ -126,7 +151,7 @@ M['config:video-cut'] = function()
     visible = true,
     help = function()
       return [[
-        1) M.video_cut(in_path, out_path, start_sec, duration)
+        1) M.video-cut(in_path, out_path, start_sec, duration)
         returns status string
       ]]
     end
@@ -166,7 +191,7 @@ M['config:video-crop'] = function()
     visible = true,
     help = function()
       return [[
-        1) M.video_crop(in_path, out_path, w, h, x, y)
+        1) M.video-crop(in_path, out_path, w, h, x, y)
         returns status string
       ]]
     end

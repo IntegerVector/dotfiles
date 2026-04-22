@@ -11,7 +11,7 @@ M['config:get-ip'] = function()
     visible = true,
     help = function()
       return [[ 
-        1) M.get_ip()
+        1) M.get-ip()
         returns public IP
       ]]
     end,

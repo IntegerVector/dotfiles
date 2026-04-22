@@ -11,7 +11,7 @@ M['config:vpn-up'] = function()
     visible = true,
     help = function()
       return [[ 
-        1) M.vpn_up()
+        1) M.vpn-up()
         starts WireGuard w0 interface
       ]]
     end,

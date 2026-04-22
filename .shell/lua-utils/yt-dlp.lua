@@ -25,7 +25,7 @@ M['config:yt-dlp'] = function()
     visible = true,
     help = function()
       return [[ 
-        1) M.yt_dlp(optional_video_url, optional_file_path)
+        1) M.yt-dlp(optional_video_url, optional_file_path)
         returns status string
       ]]
     end
