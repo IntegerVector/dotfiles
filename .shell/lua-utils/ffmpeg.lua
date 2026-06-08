@@ -1,5 +1,5 @@
 local sh = require 'lua-utils.sh'
-local prompt = require ('lua-utils.user-interaction').prompt
+local prompt = require ('lua-utils.prompt').prompt
 
 local M = {}
 
