@@ -1,9 +1,9 @@
 #!/bin/zsh
 
+export LUA_PATH="$HOME/.shell/?.lua;$HOME/.shell/?/init.lua;;"
+export LUA_CPATH="$HOME/.shell/?.so;;"
+
 run () {
-  previous_dir=$(pwd)
-  cd ~/.shell
-  luajit 'run.lua' $@
-  cd $previous_dir
+  luajit ~/.shell/run.lua $@
 }
 
