@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 alias l="ls"
-alias ll="ls -al"
+alias ll="ls -alh"
 alias v="vim"
 alias vv="nvim"
 alias g="git"
@@ -15,6 +15,9 @@ alias gpf="git push -f"
 alias ga="git add"
 alias gr="git restore"
 alias gd="git checkout"
+gdr () {
+  git checkout -b $1 origin/$1
+}
 alias gamend="git commit --amend --no-edit"
 alias tc="tmux new -s"
 alias ta="tmux attach -t"
