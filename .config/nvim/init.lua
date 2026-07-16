@@ -1,6 +1,6 @@
-if not table.unpack then
-  table.unpack = unpack
-end
-
-require 'core'
+require('polyfills').setup()
+require('config').setup()
+require('commands').setup()
+require('mappings').setup()
+require('plugins').setup()
 
