@@ -2,8 +2,8 @@ local M = {}
 
 M.key = '<Leader>q'
 M.modes = { 'n' }
-M.command = ':w | bd<Return>'
 M.options = { noremap = true, silent = true, expr = false }
+M.action = ':w | bd<Return>'
 
 return M
 

@@ -36,7 +36,7 @@ local mappings = {
 M.setup = function()
   for _, module in ipairs(mappings) do
     for _, mode in ipairs(module.modes) do
-      vim.api.nvim_set_keymap(mode, module.key, module.command, module.options)
+      vim.api.nvim_set_keymap(mode, module.key, module.action, module.options)
     end
   end
 end
