@@ -92,6 +92,103 @@ M['config:video-remove-sound'] = function()
   }
 end
 
+M['video-extract-sound'] = function(in_path, out_path)
+  if in_path == nil then
+    in_path = prompt('File path: ', true)
+  end
+
+  if out_path == nil then
+    out_path = prompt('Result file path: ', true)
+  end
+
+  return sh('ffmpeg')('-i ' .. in_path .. ' -vn -c:a copy ' .. out_path)
+end
+
+M['config:video-extract-sound'] = function()
+  return {
+    visible = true,
+    help = function()
+      return [[ 
+        1) M.video-extract-sound(optional_in_path, optional_out_path)
+        returns status string
+      ]]
+    end
+  }
+end
+
+M['video-extract-sound-as-mp3'] = function(in_path, out_path)
+  if in_path == nil then
+    in_path = prompt('File path: ', true)
+  end
+
+  if out_path == nil then
+    out_path = prompt('Result file path: ', true)
+  end
+
+  return sh('ffmpeg')('-i ' .. in_path .. ' -vn -c:a libmp3lame -q:a 0 ' .. out_path)
+end
+
+M['config:video-extract-sound-as-mp3'] = function()
+  return {
+    visible = true,
+    help = function()
+      return [[ 
+        1) M.video-extract-sound(optional_in_path, optional_out_path)
+        returns status string
+      ]]
+    end
+  }
+end
+
+M['video-extract-sound-as-wav'] = function(in_path, out_path)
+  if in_path == nil then
+    in_path = prompt('File path: ', true)
+  end
+
+  if out_path == nil then
+    out_path = prompt('Result file path: ', true)
+  end
+
+  return sh('ffmpeg')('-i ' .. in_path .. ' -vn -c:a pcm_s16le ' .. out_path)
+end
+
+M['config:video-extract-sound-as-wav'] = function()
+  return {
+    visible = true,
+    help = function()
+      return [[ 
+        1) M.video-extract-sound(optional_in_path, optional_out_path)
+        returns status string
+      ]]
+    end
+  }
+end
+
+M['video-extract-sound-as-acc'] = function(in_path, out_path)
+  if in_path == nil then
+    in_path = prompt('File path: ', true)
+  end
+
+  if out_path == nil then
+    out_path = prompt('Result file path: ', true)
+  end
+
+  return sh('ffmpeg')('-i ' .. in_path .. ' -vn -c:a aac -b:a 192k ' .. out_path)
+end
+
+M['config:video-extract-sound-as-acc'] = function()
+  return {
+    visible = true,
+    help = function()
+      return [[ 
+        1) M.video-extract-sound(optional_in_path, optional_out_path)
+        returns status string
+      ]]
+    end
+  }
+end
+
+
 M['video-to-gif'] = function(in_path, out_path, fps, skip_sec)
   if in_path == nil then
     in_path = prompt('File path: ', true)
