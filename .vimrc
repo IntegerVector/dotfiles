@@ -1,6 +1,6 @@
 " Base:
 
-let mapleader="\<space>"
+let mapleader='\<space>'
 
 set number
 set title
