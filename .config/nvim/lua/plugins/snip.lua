@@ -13,6 +13,7 @@ return {
             require('luasnip').lsp_expand(args.body)
           end,
         }
+        opts.sources = opts.sources or {}
         table.insert(opts.sources, { name = 'luasnip' })
       end,
     },
