@@ -18,8 +18,6 @@ local mappings = {
   require('mappings.text-clear-highlight'),
   require('mappings.spell-enable'),
   require('mappings.spell-disable'),
-  require('mappings.file-save-all'),
-  require('mappings.file-save-and-quit'),
   require('mappings.tab-create'),
   require('mappings.tab-switch-next'),
   require('mappings.tab-switch-prev'),
@@ -30,6 +28,9 @@ local mappings = {
   require('mappings.terminal-exit-mode'),
   require('mappings.buffer-switch-next'),
   require('mappings.buffer-switch-prev'),
+  require('mappings.buffer-save-all'),
+  require('mappings.buffer-save-and-quit'),
+  require('mappings.buffer-close-all'),
   require('mappings.file-tree-toggle'),
 }
 
