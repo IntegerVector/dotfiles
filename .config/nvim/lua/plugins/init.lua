@@ -7,7 +7,6 @@ local plugins = {
   require('plugins.lua-line'),
   require('plugins.snip'),
   require('plugins.lspconfig'),
-  require('plugins.treesitter'),
   require('plugins.formating'),
   require('plugins.lint'),
   require('plugins.cmp'),
