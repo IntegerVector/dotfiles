@@ -7,15 +7,6 @@ return {
     'nvim-tree/nvim-web-devicons',
   },
   lazy = false,
-  keys = {
-    {
-      '<leader>e',
-      function()
-        require('neo-tree.command').execute({ toggle = true, dir = vim.uv.cwd() })
-      end,
-      desc = 'Explorer NeoTree (cwd)',
-    },
-  },
   deactivate = function()
     vim.cmd [[Neotree close]]
   end,

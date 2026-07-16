@@ -30,6 +30,7 @@ local mappings = {
   require('mappings.terminal-exit-mode'),
   require('mappings.buffer-switch-next'),
   require('mappings.buffer-switch-prev'),
+  require('mappings.file-tree-toggle'),
 }
 
 M.setup = function()
