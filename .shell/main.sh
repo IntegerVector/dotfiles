@@ -19,3 +19,7 @@ source ~/.shell/decoration.sh
 source ~/.shell/aliases.sh
 source ~/.shell/dev-tools.sh
 
+if [[ -f ~/.shell/custom.sh ]]; then
+  source ~/.shell/custom.sh
+fi
+
