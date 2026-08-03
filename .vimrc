@@ -110,8 +110,8 @@ nnoremap <silent> <Leader>j <C-w>j
 nnoremap <silent> <Leader>k <C-w>k
 nnoremap <silent> <Leader>h <C-w>h
 nnoremap <silent> <Leader>l <C-w>l
-nnoremap <silent> <Leader><left> 20<C-w><
-nnoremap <silent> <Leader><right> 20<C-w>>
+nnoremap <silent> <Leader><right> 20<C-w><
+nnoremap <silent> <Leader><left> 20<C-w>>
 nnoremap <silent> <Leader><up> 5<C-w>+
 nnoremap <silent> <Leader><down> 5<C-w>-
 nnoremap <silent> <Esc> :noh<Return>
