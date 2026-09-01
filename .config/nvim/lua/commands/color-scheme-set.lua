@@ -12,7 +12,7 @@ M.action = function(opts)
   end
 
   if opts.args == 'dark' then
-    vim.cmd [[ colorscheme nightfox ]]
+    vim.cmd [[ colorscheme sonokai ]]
   end
 end
 

@@ -13,7 +13,8 @@ local plugins = {
   require('plugins.gitsigns'),
   require('plugins.mini-pair'),
   require('plugins.indent-blankline'),
-  require('plugins.colorscheme'),
+  require('plugins.colorscheme-sonokai'),
+  require('plugins.colorscheme-nightfox'),
 }
 
 M.setup = function()
