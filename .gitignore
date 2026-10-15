@@ -3,4 +3,5 @@
 *.un~
 .shell/custom.sh
 **/lazy-lock.json
+.vscode/*
 
