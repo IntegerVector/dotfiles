@@ -17,7 +17,7 @@ setup () {
   ssh-keygen -t ed25519 -C "andrii.ruban@outlook.com"
   eval "$(ssh-agent -s)"
 
-  case $(run "get_os_name") in
+  case $(uname -s) in
     "Linux")
       ssh-add ~/.ssh/id_ed25519
       ;;
