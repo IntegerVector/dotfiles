@@ -15,6 +15,7 @@ local plugins = {
   require('plugins.indent-blankline'),
   require('plugins.colorscheme-sonokai'),
   require('plugins.colorscheme-nightfox'),
+  require('plugins.treesitter'),
 }
 
 M.setup = function()

@@ -32,12 +32,22 @@ local mappings = {
   require('mappings.buffer-save-and-quit'),
   require('mappings.buffer-close-all'),
   require('mappings.file-tree-toggle'),
+  require('mappings.lsp-go-to-declaration'),
+  require('mappings.lsp-go-to-definition'),
+  require('mappings.lsp-go-to-implementation'),
+  require('mappings.lsp-go-to-references'),
+  require('mappings.lsp-open-diagnostic'),
+  require('mappings.lsp-hover'),
+  require('mappings.lsp-signature-help'),
+  require('mappings.lsp-rename'),
+  require('mappings.lsp-code-actions'),
+  require('mappings.lsp-format'),
 }
 
 M.setup = function()
   for _, module in ipairs(mappings) do
     for _, mode in ipairs(module.modes) do
-      vim.api.nvim_set_keymap(mode, module.key, module.action, module.options)
+      vim.keymap.set(mode, module.key, module.action, module.options)
     end
   end
 end
