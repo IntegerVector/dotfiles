@@ -1,11 +1,8 @@
 local M = {}
 
-local commands = {
-  require('commands.file-copy-data'),
-  require('commands.file-set-format'),
-  require('commands.tab-set-size'),
-  require('commands.color-scheme-set'),
-}
+local commands = require('utils.module-loader').load_modules('commands', {
+  -- Add tmp disabled commands here
+})
 
 M.setup = function()
   for _, module in ipairs(commands) do

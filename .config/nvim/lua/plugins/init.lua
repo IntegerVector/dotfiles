@@ -1,22 +1,8 @@
 local M = {}
 
-local plugins = {
-  require('plugins.neo-tree'),
-  require('plugins.telescope'),
-  require('plugins.telescope-file-browser'),
-  require('plugins.lua-line'),
-  require('plugins.snip'),
-  require('plugins.lspconfig'),
-  require('plugins.formating'),
-  require('plugins.lint'),
-  require('plugins.cmp'),
-  require('plugins.gitsigns'),
-  require('plugins.mini-pair'),
-  require('plugins.indent-blankline'),
-  require('plugins.colorscheme-sonokai'),
-  require('plugins.colorscheme-nightfox'),
-  require('plugins.treesitter'),
-}
+local plugins = require('utils.module-loader').load_modules('plugins', {
+  -- Add tmp disabled plugins here
+})
 
 M.setup = function()
   local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
