@@ -31,5 +31,21 @@ setup () {
       eval "$(/opt/homebrew/bin/brew shellenv)"
       ;;
   esac
+
+  # Dev tools:
+  # Rust
+  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+  # Bun
+  curl -fsSL https://bun.com/install | bash
+  # Python UV
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  # Headroom for AI
+  uv tool install --python 3.13 "headroom-ai[all]"
+  # RTK
+  curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/master/install.sh | sh
+  # OpenCode
+  curl -fsSL https://opencode.ai/v2/install | bash
+
+  rtk init -g --opencode
 }
 

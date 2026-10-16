@@ -1,5 +1,11 @@
 #!/bin/zsh
 
+# uv
+. "$HOME/.local/bin/env"
+
+# rtk
+export PATH="$HOME/.local/bin:$PATH"
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
