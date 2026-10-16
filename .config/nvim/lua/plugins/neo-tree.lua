@@ -8,19 +8,49 @@ return {
   },
   lazy = false,
   deactivate = function()
-    vim.cmd [[Neotree close]]
+    vim.cmd('Neotree close')
   end,
+
   init = function()
-    if vim.fn.argc(-1) == 1 then
-      local stat = vim.uv.fs_stat(vim.fn.argv(0))
-      if stat and stat.type == 'directory' then
-        require('neo-tree')
-      end
-    end
+    local group = vim.api.nvim_create_augroup('NeoTreeStartDirectory', {
+      clear = true,
+    })
+
+    vim.api.nvim_create_autocmd('BufEnter', {
+      group = group,
+      once = true,
+      desc = 'Open Neo-tree when Neovim starts with a directory',
+      callback = function()
+        if package.loaded['neo-tree'] then
+          return
+        end
+
+        local arg = vim.fn.argv(0)
+        if arg == '' then
+          return
+        end
+
+        local stat = vim.uv.fs_stat(arg)
+        if stat and stat.type == 'directory' then
+          require('neo-tree')
+        end
+      end,
+    })
   end,
+
+  ---@module 'neo-tree'
+  ---@type neotree.Config
   opts = {
     sources = { 'filesystem', 'buffers', 'git_status', 'document_symbols' },
-    open_files_do_not_replace_types = { 'terminal', 'Trouble', 'trouble', 'qf', 'Outline' },
+
+    open_files_do_not_replace_types = {
+      'terminal',
+      'Trouble',
+      'trouble',
+      'qf',
+      'Outline',
+    },
+
     filesystem = {
       bind_to_cwd = false,
       follow_current_file = {
@@ -29,6 +59,7 @@ return {
       },
       use_libuv_file_watcher = true,
     },
+
     window = {
       position = 'left',
       width = 50,
@@ -39,18 +70,24 @@ return {
         ['Y'] = {
           function(state)
             local node = state.tree:get_node()
-            local path = node:get_id()
-            vim.fn.setreg('+', path, 'c')
+            if node then
+              vim.fn.setreg('+', node:get_id(), 'c')
+            end
           end,
-          desc = 'Copy Path to Clipboard',
+          desc = 'Copy path to clipboard',
         },
+
         ['O'] = {
           function(state)
-            require('lazy.util').open(state.tree:get_node().path, { system = true })
+            local node = state.tree:get_node()
+            if node and node.path then
+              require('lazy.util').open(node.path, { system = true })
+            end
           end,
-          desc = 'Open with System Application',
+          desc = 'Open with system application',
         },
-        ['gA']  = 'git_add_all',
+
+        ['gA'] = 'git_add_all',
         ['gu'] = 'git_unstage_file',
         ['ga'] = 'git_add_file',
         ['gr'] = 'git_revert_file',
@@ -59,6 +96,7 @@ return {
         ['sv'] = 'open_vsplit',
       },
     },
+
     default_component_configs = {
       indent = {
         with_expanders = true,
@@ -66,17 +104,18 @@ return {
         expander_expanded = '',
         expander_highlight = 'NeoTreeExpander',
       },
+
       git_status = {
         symbols = {
-          added     = '',
-          modified  = '',
-          deleted   = '',
-          renamed   = '',
-          ignored   = '',
+          added = '',
+          modified = '',
+          deleted = '',
+          renamed = '',
+          ignored = '',
           untracked = '',
-          unstaged  = '',
-          staged    = '',
-          conflict  = '',
+          unstaged = '',
+          staged = '',
+          conflict = '',
         },
       },
     },
