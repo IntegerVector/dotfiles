@@ -1,8 +1,5 @@
 #!/bin/zsh
 
-# uv
-. "$HOME/.local/bin/env"
-
 # rtk
 export PATH="$HOME/.local/bin:$PATH"
 
